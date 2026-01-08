@@ -6,7 +6,7 @@ public class DynamicStringList implements StringList {
 
     @Override
     public String get(int index) {
-        if (index > array.length - 1) {
+        if (index < 0 || index > this.size()) {
             throw new IndexOutOfBoundsException();
         }
         return array[index];
@@ -14,8 +14,10 @@ public class DynamicStringList implements StringList {
 
     @Override
     public void set(int index, String value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        if (index < 0 || index > this.size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        array[index] = value;
     }
 
     @Override
