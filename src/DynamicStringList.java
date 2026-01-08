@@ -20,8 +20,15 @@ public class DynamicStringList implements StringList {
 
     @Override
     public void add(String value) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        if (currentSize >= currentMaxSize) {
+            currentMaxSize = currentMaxSize * 2;
+            String[] newArray = new String[currentMaxSize];
+            for (int i = 0; i < currentSize; i++) {
+                newArray[i] = array[i];
+            }
+            array = newArray;
+        }
+        array[currentSize++] = value;
     }
 
     @Override
