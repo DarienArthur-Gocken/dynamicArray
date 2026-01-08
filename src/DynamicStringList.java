@@ -1,6 +1,8 @@
 public class DynamicStringList implements StringList {
 
     private String[] array = new String[5];
+    private int currentSize = 0;
+    private int currentMaxSize = 5;
 
     @Override
     public String get(int index) {
@@ -30,14 +32,12 @@ public class DynamicStringList implements StringList {
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
+        return currentSize;
     }
 
     @Override
     public int capacity() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'capacity'");
+        return currentMaxSize;
     }
 
     
