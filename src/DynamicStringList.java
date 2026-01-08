@@ -1,5 +1,7 @@
 public class DynamicStringList implements StringList {
 
+    private String[] array = new String[5];
+
     @Override
     public String get(int index) {
         // TODO Auto-generated method stub
